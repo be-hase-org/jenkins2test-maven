@@ -6,5 +6,10 @@ node {
 
     stage 'Build and test'
     env.PATH = "${tool 'maven3.3.9'}/bin:${env.PATH}"
-    sh 'mvn clean test'
+
+    try {
+        sh 'mvn clean test'
+    } catch (err) {
+        step([$class: 'GitHubCommitNotifier', resultOnFailure: "Error"])
+    }
 }
