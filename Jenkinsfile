@@ -1,4 +1,5 @@
 node {
     git branch: 'refs/heads/master', url: 'https://github.com/be-hase/jenkins2test-maven'
-    build 'mvn clean test'
+    def mvnHome = tool 'M3'
+    sh "${mvnHome}/bin/mvn clean test"
 }
