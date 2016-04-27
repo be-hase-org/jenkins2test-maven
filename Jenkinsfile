@@ -22,10 +22,6 @@ node {
 
     stage 'Notify'
     step([$class: 'GitHubCommitNotifier', resultOnFailure: 'FAILURE'])
-//    def color = 'GREEN'
-//    if (!isOK()) {
-//        color = 'RED'
-//    }
 }
 
 def isOK() {
