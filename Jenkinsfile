@@ -24,6 +24,7 @@ node {
     step([$class: 'GitHubCommitNotifier', resultOnFailure: 'FAILURE'])
 }
 
+@com.cloudbees.groovy.cps.NonCPS
 def isOK() {
     return "SUCCESS".equals(currentBuild.result)
 }
