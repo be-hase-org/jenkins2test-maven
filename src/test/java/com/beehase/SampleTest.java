@@ -15,6 +15,6 @@ public class SampleTest {
 
     @Test
     public void sayHello() {
-        assertThat(tested.sayHello(), is("hello"));
+        assertThat(tested.sayHello(), is("fail"));
     }
 }
